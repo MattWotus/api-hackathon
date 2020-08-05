@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>COVID-19 Global Tracker</title>
+  <title>Global COVID-19 Tracker</title>
+  <link rel="stylesheet" href="./styles/maps.css">
 </head>
-<body>
 
+<body>
+  <div class="container">
+    <header>
+      <nav>
+        <ul>
+          <li><a style="text-decoration: underline" href="./index.html">Total Deaths</a></li>
+          <li><a href="./perCapita.html">Per Capita Deaths</a></li>
+          <li><a href="./mortalityRate.html">Mortality Rates</a></li>
+        </ul>
+      </nav>
+      <h1>Global COVID-19 Tracker</h1>
+      <h2><span id="globalDeaths"></span> deaths worldwide as of <span id="date"></span></h2>
+    </header>
+    <div class="callToAction">
+      <h1>Move your mouse around the map to view deaths totals by country</h1>
+      <p style="visibility:hidden;">(Measured as deaths per 1,000,000 people using the most recent population data
+        available)</p>
+    </div>
+    <div id="regions_div"></div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="./components/deathsMap.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </body>
+
 </html>
