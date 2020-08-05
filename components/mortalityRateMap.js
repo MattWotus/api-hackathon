@@ -15,7 +15,7 @@ function thousands_separators(num) {
 };
 
 $.ajax({
-  url: "https://api.covid19api.com/summary",
+  url: "https://cors-anywhere.herokuapp.com/api.covid19api.com/summary",
   method: "GET",
   success: getCovidDataSuccess,
   error: getCovidDataError
