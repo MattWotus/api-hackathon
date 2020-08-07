@@ -249,7 +249,7 @@ function getCovidDataSuccess(data) {
     ]);
     var options = {
       colorAxis: {
-        colors: ['#48ba17', 'yellow', 'orange', '#db4639']
+        colors: ['#48ba17', 'yellow', 'orange', '#4B0082']
       },
     };
     var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
