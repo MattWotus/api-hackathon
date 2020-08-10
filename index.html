@@ -14,7 +14,7 @@
 <body>
   <div class="container-fluid text-center d-flex flex-column align-items-center">
     <div class="row">
-      <div id="title" class="col-12 mt-3">
+      <div id="title" class="col-12">
         <h1>COVID-19: By the Numbers</h1>
       </div>
     </div>
@@ -22,7 +22,7 @@
       <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
       Loading...
     </div>
-    <div id="casesRow" class="row mt-5 hidden">
+    <div id="casesRow" class="row hidden">
       <div class="col-12">
         <h1>Total Cases:</h1>
         <div id="totalCases" class="count"></div>
@@ -39,8 +39,8 @@
         *As of <span id="date"></span>
       </div>
     </div>
-    <div id="buttonRow" class="row d-flex justify-content-center">
-      <a href="deaths.html"><button type="button" id="button" class="btn btn-info btn-lg">View Maps</button></a>
+    <div id="buttonRow" class="row d-flex justify-content-center hidden">
+      <a href="deaths.html"><button type="button" id="button" class="btn btn-info btn-lg hidden">View Maps</button></a>
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>

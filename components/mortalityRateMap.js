@@ -33,7 +33,6 @@ function getCovidDataSuccess(data) {
     var multiplication = division * 100;
     mortalityRateArray.push(multiplication);
   }
-  console.log(mortalityRateArray[168]);
   google.charts.load('current', {
     'packages': ['geochart'],
     'mapsApiKey': 'AIzaSyBgy8LzcrzHLkGU97C0EgbAMfJJSv89-BI'

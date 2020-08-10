@@ -9,7 +9,6 @@ $.ajax({
 });
 
 function getCovidDataSuccess(data) {
-  console.log(data);
   var countryData = data["Countries"];
   var deathsArray = [];
   var countryArray = [];
@@ -34,7 +33,6 @@ function getCovidDataSuccess(data) {
     var multiplication = division * 1000000;
     perCapitaArray.push(multiplication);
   };
-  console.log(perCapitaArray);
   google.charts.load('current', {
     'packages': ['geochart'],
     'mapsApiKey': 'AIzaSyBgy8LzcrzHLkGU97C0EgbAMfJJSv89-BI'

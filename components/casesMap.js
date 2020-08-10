@@ -1,21 +1,3 @@
-// var globalDeaths = document.getElementById("globalDeaths");
-
-// var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-// var dateContainer = document.getElementById("date");
-// var date = new Date();
-// var year = date.getFullYear();
-// var day = date.getDate();
-// var month = monthNames[date.getMonth()];
-
-// dateContainer.textContent = month + " " + day + "," + " " + year;
-
-// function thousands_separators(num) {
-//   var num_parts = num.toString().split(".");
-//   num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//   return num_parts.join(".");
-// };
-
 $.ajax({
   headers: {
     "X-Access-Token": "63fc2898-dbd6-4529-ab07-4311a179dbaf"
@@ -28,7 +10,6 @@ $.ajax({
 
 
 function getCovidDataSuccess(data) {
-  // globalDeaths.textContent = thousands_separators(data["Global"]["TotalDeaths"]);
   var countryData = data["Countries"];
   var casesArray = [];
   var countryArray = [];

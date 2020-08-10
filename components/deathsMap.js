@@ -23,7 +23,6 @@ function getCovidDataSuccess(data) {
   countryArray.splice(136, 1);
   deathsArray.splice(142, 1);
   countryArray.splice(142, 1);
-  console.log(deathsArray);
   google.charts.load('current', {
     'packages': ['geochart'],
     'mapsApiKey': 'AIzaSyBgy8LzcrzHLkGU97C0EgbAMfJJSv89-BI'

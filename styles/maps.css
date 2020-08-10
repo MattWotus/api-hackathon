@@ -2,25 +2,42 @@ body {
   margin: auto;
   display: flex;
   justify-content: center;
-  position: relative;
   width: 100vw;
   height: 100vh;
 }
 
-.container {
-  width: 100%;
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
+  width: 100%;
+  z-index: 5;
 }
 
-#spinner {
-  position: absolute;
-  top: 50%;
-  width: 4rem;
-  height: 4rem;
+.modal-content {
+  width: 30%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: lightgrey;
+  border: 5px solid #6c757d;
+  color: rgb(0, 0, 0);
+  padding: 20px;
 }
 
 p {
   margin: 0;
+}
+
+.nav {
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .nav-link {
@@ -38,4 +55,65 @@ a {
 
 .map {
   width: 72%;
+  height: 86%;
+  position: relative;
+}
+
+#spinner {
+  position: absolute;
+  top: 10%;
+  width: 4rem;
+  height: 4rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 1528px) {
+  .modal-content {
+    width: 35%;
+  }
+}
+
+@media only screen and (max-width: 1310px) {
+  .modal-content {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 1161px) {
+  .modal-content {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 932px) {
+  .modal-content {
+    width: 60%;
+  }
+
+  #spinner {
+    width: 3rem;
+    height: 3rem;
+    top: 5%;
+  }
+}
+
+@media only screen and (max-width: 765px) {
+  .modal-content {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 655px) {
+  .modal-content {
+    width: 80%;
+  }
+
+  #spinner {
+    width: 2rem;
+    height: 2rem;
+    top: 2%;
+  }
 }

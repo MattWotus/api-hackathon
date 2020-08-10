@@ -35,18 +35,20 @@ function getCovidDataSuccess(data) {
   var deathsRow = document.getElementById("deathsRow");
   var dateRow = document.getElementById("dateRow");
   var buttonRow = document.getElementById("buttonRow");
+  var button = document.getElementById("button");
   spinner.classList.add("hidden");
   casesRow.classList.remove("hidden");
   deathsRow.classList.remove("hidden");
   dateRow.classList.remove("hidden");
-  buttonRow.style.marginTop = "0px";
+  buttonRow.classList.remove("hidden");
+  button.classList.remove("hidden");
   deathsText.textContent = totalDeaths;
   casesText.textContent = totalCases;
   $('.count').each(function () {
     $(this).prop('Counter', 0).animate({
       Counter: $(this).text()
     }, {
-      duration: 3000,
+      duration: 2000,
       easing: 'swing',
       step: function (now) {
         $(this).text(Math.ceil(now));
