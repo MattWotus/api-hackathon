@@ -1,20 +1,7 @@
-var globalDeaths = document.getElementById("globalDeaths");
-
-var dateContainer = document.getElementById("date");
-var date = new Date();
-var year = date.getFullYear();
-var day = date.getDate();
-var month = date.getMonth() + 1;
-
-dateContainer.textContent = month + "/" + day + "/" + year;
-
-function thousands_separators(num) {
-  var num_parts = num.toString().split(".");
-  num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  return num_parts.join(".");
-};
-
 $.ajax({
+  headers: {
+    "X-Access-Token": "63fc2898-dbd6-4529-ab07-4311a179dbaf"
+  },
   url: "https://cors-anywhere.herokuapp.com/api.covid19api.com/summary",
   method: "GET",
   success: getCovidDataSuccess,
@@ -22,23 +9,26 @@ $.ajax({
 });
 
 function getCovidDataSuccess(data) {
-    globalDeaths.textContent = thousands_separators(data["Global"]["TotalDeaths"]);
   var countryData = data["Countries"];
   var casesArray = [];
   var deathsArray = [];
   var countryArray = [];
   for (var i = 0; i < countryData.length; i++) {
-    var totalCases = countryData[i]["TotalConfirmed"]
     var totalDeaths = countryData[i]["TotalDeaths"];
     var country = countryData[i]["Country"];
-    casesArray.push(totalCases);
+    var totalCases = countryData[i]["TotalConfirmed"];
     deathsArray.push(totalDeaths);
     countryArray.push(country);
+    casesArray.push(totalCases);
   };
-  console.log(casesArray);
-  console.log(deathsArray);
+  deathsArray.splice(136, 1);
+  countryArray.splice(136, 1);
+  casesArray.splice(136, 1);
+  deathsArray.splice(142, 1);
+  countryArray.splice(142, 1);
+  casesArray.splice(142, 1);
   var mortalityRateArray = [];
-  for (var i = 0; i < countryData.length; i++) {
+  for (var i = 0; i < casesArray.length; i++) {
     var division = deathsArray[i] / casesArray[i];
     var multiplication = division * 100;
     mortalityRateArray.push(multiplication);
@@ -236,8 +226,6 @@ function getCovidDataSuccess(data) {
       [countryArray[181], mortalityRateArray[181]],
       [countryArray[182], mortalityRateArray[182]],
       [countryArray[183], mortalityRateArray[183]],
-      [countryArray[184], mortalityRateArray[184]],
-      [countryArray[185], mortalityRateArray[185]],
       [
         ["Greenland"],
         [0]
@@ -249,13 +237,12 @@ function getCovidDataSuccess(data) {
     ]);
     var options = {
       colorAxis: {
-        colors: ['#48ba17', 'yellow', 'orange', '#4B0082']
+        colors: ['lightblue', 'dodgerblue', 'blue', 'mediumblue']
       },
     };
     var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
     chart.draw(data, options);
   };
-
 };
 
 function getCovidDataError(error) {

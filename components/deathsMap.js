@@ -1,28 +1,15 @@
-var globalDeaths = document.getElementById("globalDeaths");
-
-var dateContainer = document.getElementById("date");
-var date = new Date();
-var year = date.getFullYear();
-var day = date.getDate();
-var month = date.getMonth() + 1;
-
-dateContainer.textContent = month + "/" + day + "/" + year;
-
-function thousands_separators(num) {
-  var num_parts = num.toString().split(".");
-  num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  return num_parts.join(".");
-};
-
 $.ajax({
+  headers: {
+    "X-Access-Token": "63fc2898-dbd6-4529-ab07-4311a179dbaf"
+  },
   url: "https://cors-anywhere.herokuapp.com/api.covid19api.com/summary",
   method: "GET",
   success: getCovidDataSuccess,
   error: getCovidDataError
 });
 
+
 function getCovidDataSuccess(data) {
-  globalDeaths.textContent = thousands_separators(data["Global"]["TotalDeaths"]);
   var countryData = data["Countries"];
   var deathsArray = [];
   var countryArray = [];
@@ -32,14 +19,19 @@ function getCovidDataSuccess(data) {
     deathsArray.push(totalDeaths);
     countryArray.push(country);
   };
+  deathsArray.splice(136, 1);
+  countryArray.splice(136, 1);
+  deathsArray.splice(142, 1);
+  countryArray.splice(142, 1);
   google.charts.load('current', {
     'packages': ['geochart'],
     'mapsApiKey': 'AIzaSyBgy8LzcrzHLkGU97C0EgbAMfJJSv89-BI'
   });
   google.charts.setOnLoadCallback(drawRegionsMap);
+
   function drawRegionsMap() {
     var data = google.visualization.arrayToDataTable([
-      ['Country', 'Number of Deaths'],
+      ['Country', 'Number of Confirmed Deaths'],
       [countryArray[0], deathsArray[0]],
       [countryArray[1], deathsArray[1]],
       [countryArray[2], deathsArray[2]],
@@ -224,8 +216,6 @@ function getCovidDataSuccess(data) {
       [countryArray[181], deathsArray[181]],
       [countryArray[182], deathsArray[182]],
       [countryArray[183], deathsArray[183]],
-      [countryArray[184], deathsArray[184]],
-      [countryArray[185], deathsArray[185]],
       [
         ["Greenland"],
         [0]
@@ -237,13 +227,12 @@ function getCovidDataSuccess(data) {
     ]);
     var options = {
       colorAxis: {
-        colors: ['#48ba17', 'yellow', 'orange', '#4B0082']
+        colors: ['lightblue', 'dodgerblue', 'blue', 'mediumblue']
       },
     };
     var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
     chart.draw(data, options);
   };
-
 };
 
 function getCovidDataError(error) {

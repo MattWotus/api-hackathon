@@ -5,29 +5,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Global COVID-19 Tracker</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="./styles/maps.css">
+
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <nav>
-        <ul>
-          <li><a href="./index.html">Total Deaths</a></li>
-          <li><a style="text-decoration: underline" href="./perCapita.html">Per Capita Deaths</a></li>
-          <li><a href="./mortalityRate.html">Mortality Rates</a></li>
-        </ul>
-      </nav>
-      <h1>Global COVID-19 Tracker</h1>
-      <h2><span id="globalDeaths"></span> deaths worldwide as of <span id="date"></span></h2>
-    </header>
-    <div class="callToAction">
-      <h1>Move your mouse around the map to view deaths per capita by country</h1>
-      <p>(Measured as deaths per 1,000,000 people using the most recent population data available)</p>
+  <div class="modal-overlay hidden">
+    <div class="modal-content">
+      <p>Please refresh your brower to adjust the size of the map.</p>
     </div>
-    <div id="regions_div"></div>
+  </div>
+  <div class="container-fluid text-center d-flex flex-column align-items-center">
+    <div class="row  mt-2 mb-2">
+      <div class="col-12">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="deaths.html">Total Deaths</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  active" href="perCapita.html">Deaths Per Capita</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mortalityRate.html">Mortality Rates</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cases.html">Total Cases</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="hospitalBeds.html">Hospital Beds Per Capita</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-12">
+        <p>Move your mouse around the map to view deaths per capita (measured as number of confirmed deaths per
+          1,000,000 people)</p>
+      </div>
+    </div>
+    <div class="row map">
+      <div class="col-12">
+        <div id="spinner" class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div id="regions_div"></div>
+      </div>
+    </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
+  <script src="./components/modal.js"></script>
   <script src="./components/perCapitaMap.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </body>
