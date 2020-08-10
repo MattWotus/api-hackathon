@@ -219,6 +219,7 @@ function getCovidDataSuccess(data) {
       [countryArray[180], bedRateArray[180]],
       [countryArray[181], bedRateArray[181]],
       [countryArray[182], bedRateArray[182]],
+      [countryArray[183], bedRateArray[183]],
     ]);
     var options = {
       colorAxis: {
