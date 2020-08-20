@@ -88,6 +88,12 @@ a {
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  .map {
+    width: 90%;
+  }
+}
+
 @media only screen and (max-width: 932px) {
   .modal-content {
     width: 60%;
