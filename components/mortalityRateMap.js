@@ -27,6 +27,12 @@ function getCovidDataSuccess(data) {
   deathsArray.splice(142, 1);
   countryArray.splice(142, 1);
   casesArray.splice(142, 1);
+  deathsArray.splice(100, 1);
+  countryArray.splice(100, 1);
+  casesArray.splice(100, 1);
+  deathsArray.splice(139, 1);
+  countryArray.splice(139, 1);
+  casesArray.splice(139, 1);
   var mortalityRateArray = [];
   for (var i = 0; i < casesArray.length; i++) {
     var division = deathsArray[i] / casesArray[i];
