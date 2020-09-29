@@ -27,12 +27,21 @@ function getCovidDataSuccess(data) {
   deathsArray.splice(142, 1);
   countryArray.splice(142, 1);
   populationArray.splice(142, 1);
+  deathsArray.splice(100, 1);
+  countryArray.splice(100, 1);
+  populationArray.splice(100, 1);
+  deathsArray.splice(139, 1);
+  countryArray.splice(139, 1);
+  populationArray.splice(139, 1);
   var perCapitaArray = [];
   for (var i = 0; i < populationArray.length; i++) {
     var division = deathsArray[i] / populationArray[i];
     var multiplication = division * 1000000;
     perCapitaArray.push(multiplication);
   };
+  console.log("deaths:", deathsArray);
+  console.log("population:", populationArray);
+  console.log("per capita:", perCapitaArray);
   google.charts.load('current', {
     'packages': ['geochart'],
     'mapsApiKey': 'AIzaSyBgy8LzcrzHLkGU97C0EgbAMfJJSv89-BI'
