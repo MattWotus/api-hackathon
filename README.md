@@ -15,7 +15,7 @@ A JavaScript application for users to view world maps of different COVID-19 data
 
 ## Live Demo
 
-Try the application live at https://mattwotus.github.io/covid-tracker/
+Try the application live at http://covid-tracker.mattwotusdev.com/
 
 ## Features
 
