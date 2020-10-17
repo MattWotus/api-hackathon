@@ -29,15 +29,3 @@ Try the application live at http://covid-tracker.mattwotusdev.com/
 ## Preview
 
 ![covid-tracker](assets/covid-tracker.gif)
-
-## Development
-
-### Getting Started
-
-1. Clone the repository.
-
-   ```
-   git clone https://github.com/MattWotus/covid-tracker.git
-   ```
-   
-2. Open the folder in a code editor and open the index.html in default browser.
