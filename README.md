@@ -19,12 +19,12 @@ Try the application live at http://covid-tracker.mattwotusdev.com/
 
 ## Features
 
-- Users can view total confirmed global COVID-19 deaths and cases. 
-- Users can view a world map of total confirmed COVID-19 deaths per country and hover over or click on each country.
-- Users can view a world map of COVID-19 deaths per capita and hover over or click on each country.
-- Users can view a world map of COVID-19 mortality rates per country and hover over or click on each country.
-- Users can view a world map of total confirmed COVID-19 cases per country and hover over or click on each country.
-- Users can view a world map of hospital beds per capita and hover over or click on each country.
+- User can view total confirmed global COVID-19 deaths and cases. 
+- User can view a world map of total confirmed COVID-19 deaths per country and hover over or click on each country.
+- User can view a world map of COVID-19 deaths per capita and hover over or click on each country.
+- User can view a world map of COVID-19 mortality rates per country and hover over or click on each country.
+- User can view a world map of total confirmed COVID-19 cases per country and hover over or click on each country.
+- User can view a world map of hospital beds per capita and hover over or click on each country.
 
 ## Preview
 
